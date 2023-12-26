@@ -1,1 +1,1 @@
-# scrum_app
+# Scrum App for iOS devices

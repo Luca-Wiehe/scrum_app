@@ -8,7 +8,10 @@
 import SwiftUI
     
 struct DetailView: View {
-    let scrum: DailyScrum
+    // use binding to ensure reload after state change
+    @Binding var scrum: DailyScrum
+    
+    @State private var editingScrum: DailyScrum = DailyScrum.emptyScrum
     @State private var isPresentingEditView: Bool = false
     
     var body: some View {
@@ -47,11 +50,12 @@ struct DetailView: View {
         .toolbar {
             Button("Edit") {
                 isPresentingEditView = true
+                editingScrum = scrum
             }
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationStack {
-                DetailEditView()
+                DetailEditView(scrum: $editingScrum)
                     .navigationTitle(scrum.title)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
@@ -62,6 +66,7 @@ struct DetailView: View {
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Done") {
                                 isPresentingEditView = false
+                                scrum = editingScrum
                             }
                         }
                     }
@@ -73,7 +78,8 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            DetailView(scrum: DailyScrum.sampleData[0])
+            // .constant() is required because Binding<DailyScrum> and DailyScrum are different data types
+            DetailView(scrum: .constant(DailyScrum.sampleData[0]))
         }
     }
 }

@@ -11,6 +11,9 @@ import SwiftUI
 struct ScrumsView: View {
     @Binding var scrums: [DailyScrum]
     
+    // track if "New Scrum"-View is opened
+    @State private var isPresentingNewScrumView: Bool = false
+    
     var body: some View {
         NavigationStack{
             // if we don't have an Identifiable object, we need to `pass id: \.title` as an additional attribute to List
@@ -23,11 +26,16 @@ struct ScrumsView: View {
             }
             .navigationTitle("Daily Scrums")
             .toolbar {
-                Button(action: {}) {
+                Button(action: {
+                    isPresentingNewScrumView = true
+                }) {
                     Image(systemName: "plus")
                 }
                 .accessibilityLabel("New Scrum")
             }
+        }
+        .sheet(isPresented: $isPresentingNewScrumView) {
+            NewScrumSheet(scrums: $scrums, isPresentingNewScrumView: $isPresentingNewScrumView)
         }
     }
 }

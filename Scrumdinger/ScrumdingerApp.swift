@@ -9,13 +9,22 @@ import SwiftUI
 
 @main
 struct ScrumdingerApp: App {
-    // State => this is data source for all children
-    @State private var scrums = DailyScrum.sampleData
+    
+    
+    // make ScrumStore available for all children
+    @StateObject private var store = ScrumStore()
     
     var body: some Scene {
         WindowGroup {
-            // use $scrums to create state as binding
-            ScrumsView(scrums: $scrums)
+            // use $store to create state as binding, i.e. update all related UI elements on change
+            ScrumsView(scrums: $store.scrums)
+                .task {
+                    do {
+                        try await store.load()
+                    } catch {
+                        fatalError(error.localizedDescription)
+                    }
+                }
         }
     }
 }

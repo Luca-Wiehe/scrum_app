@@ -41,4 +41,15 @@ class ScrumStore: ObservableObject {
         // make loaded data a class attribute
         self.scrums = scrums
     }
+    
+    func save(scrums: [DailyScrum]) async throws {
+        // this time we don't return anything, thus we don't specify generics
+        let task = Task {
+            let data = try JSONEncoder().encode(scrums)
+            let outfile = try Self.fileURL()
+            try data.write(to: outfile)
+        }
+        
+        _ = try await task.value
+    }
 }

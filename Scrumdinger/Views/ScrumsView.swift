@@ -11,8 +11,13 @@ import SwiftUI
 struct ScrumsView: View {
     @Binding var scrums: [DailyScrum]
     
+    // use scenePhase to track if ScrumsView is active, inactive or in background
+    @Environment(\.scenePhase) private var scenePhase
+    
     // track if "New Scrum"-View is opened
     @State private var isPresentingNewScrumView: Bool = false
+    
+    let saveAction: () -> Void
     
     var body: some View {
         NavigationStack{
@@ -37,12 +42,16 @@ struct ScrumsView: View {
         .sheet(isPresented: $isPresentingNewScrumView) {
             NewScrumSheet(scrums: $scrums, isPresentingNewScrumView: $isPresentingNewScrumView)
         }
+        // save user data when scene becomes in active (i.e. app is closed)
+        .onChange(of: scenePhase) {
+            if scenePhase == .inactive { saveAction() }
+        }
     }
 }
 
 
 struct ScrumsView_Previews: PreviewProvider {
     static var previews: some View {
-        ScrumsView(scrums: .constant(DailyScrum.sampleData))
+        ScrumsView(scrums: .constant(DailyScrum.sampleData), saveAction: {})
     }
 }

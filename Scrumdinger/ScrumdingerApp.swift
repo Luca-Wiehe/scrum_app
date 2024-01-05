@@ -17,14 +17,26 @@ struct ScrumdingerApp: App {
     var body: some Scene {
         WindowGroup {
             // use $store to create state as binding, i.e. update all related UI elements on change
-            ScrumsView(scrums: $store.scrums)
-                .task {
+            ScrumsView(scrums: $store.scrums) {
+                Task {
                     do {
-                        try await store.load()
+                        // save data
+                        try await store.save(scrums: store.scrums)
                     } catch {
+                        // let user know that loading data failed
                         fatalError(error.localizedDescription)
                     }
                 }
+            }
+            .task {
+                do {
+                    // load data
+                    try await store.load()
+                } catch {
+                    // let user know that loading data failed
+                    fatalError(error.localizedDescription)
+                }
+            }
         }
     }
 }

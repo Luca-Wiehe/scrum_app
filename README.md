@@ -2,6 +2,28 @@
 This is the Swift based iOS Application for "Scrumdinger". Scrumdinger is an application to manage meetings according to the Scrum collaboration framework. The app is based on an official tutorial provided by the Apple Developer Platform: https://developer.apple.com/tutorials/app-dev-training. I used this tutorial as a foundation to learn the basics of iOS development and play around with additional iOS features.
 
 ## Preview
+To gain some insights into the Web Application, check out the following Screenshots:
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 20px; justify-content: center; text-align: center;">
+  <div>
+    <img width="235" alt="image" src="https://github.com/Luca-Wiehe/scrum_app/assets/85710000/d7a1aa22-d587-4c1e-b9ea-3d48416b8890">
+    <br>
+    <em>Screenshot 1: Overview of all Scrum Teams</em>
+  </div>
+  <br>
+  <div>
+    <img width="235" alt="image" src="https://github.com/Luca-Wiehe/scrum_app/assets/85710000/ff1d5ca5-2386-4fc4-84ff-d4963bf12c3c">
+    <br>
+    <em>Screenshot 2: Scheduling a Scrum Meeting</em>
+  </div>
+  <br>
+  <div>
+    <img width="235" alt="image" src="https://github.com/Luca-Wiehe/scrum_app/assets/85710000/f5eeae2c-05a9-4f12-98c6-9f0fc5db7dd1">
+    <br>
+    <em>Screenshot 3: Creating a new Scrum Team</em>
+  </div>
+</div>
+
 
 ## Project Description
 

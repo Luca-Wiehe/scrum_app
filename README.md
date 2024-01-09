@@ -9,7 +9,10 @@ This is the Swift based iOS Application for "Scrumdinger". Scrumdinger is an app
 Mobile applications allow bridging the gap between high-level architectural planning and user-centric application design. Many projects I have developed in the past were developed in formats such as Python notebooks or scripts which are not tangible for many audiences. To understand the process of wrapping research or industrial projects in an understandable fashion, I wanted to get in touch with mobile app development.
 
 ### Choice of Tech Stack
-I wanted to get exposed to Swift over frameworks like React Native or Flutter because it offers optimized performance for Apple's hardware, seamless integration with iOS's native features, and reliable support from Apple. Future projects I want to realize will need a very specific set of features for sound processing that may not be available by then in cross-plattform frameworks.
+The mobile application uses Swift with SwiftUI as a programming language. Reasons for choosing Swift include:
++ Optimized Compatibility: Compared to cross-platform frameworks like React Native or Flutter, Swift is optimized for Apple's hardware. I may have to use a very specific set of iOS specific features in a future project.
++ Performance: Swift uses native features which don't require preprocessing and increase performance for compute-intense tasks
++ User Interface: SwiftUI provides access to UI components that adhere to Apple's design schemes for mobile applications
 
 ### Repository Structure
 + `/Resources/`: Resources such as sound files

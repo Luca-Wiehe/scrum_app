@@ -12,7 +12,7 @@ struct MeetingTimerView: View {
     var body: some View {
         Circle()
             .strokeBorder(lineWidth: 24)
-            // overlay per default centers its content
+            // Circle overlay per default centers its content
             .overlay {
                 VStack {
                     Text(currentSpeaker)
@@ -22,6 +22,17 @@ struct MeetingTimerView: View {
                 .accessibilityElement(children: .combine)
                 .foregroundColor(theme.accentColor)
             }
+            .overlay {
+                ForEach(speakers){
+                    speaker in
+                    if speaker.isCompleted, let index = speakers.firstIndex(where: { $0.id == speaker.id }) {
+                        SpeakerArc(speakerIndex: index, totalSpeakers: speakers.count)
+                            .rotation(Angle(degrees: -90))
+                            .stroke(theme.mainColor, lineWidth: 12)
+                    }
+                }
+            }
+            .padding(.horizontal)
     }
 }
 

@@ -8,19 +8,25 @@ To gain some insights into the Web Application, check out the following Screensh
   <div>
     <img width="235" alt="image" src="https://github.com/Luca-Wiehe/scrum_app/assets/85710000/d7a1aa22-d587-4c1e-b9ea-3d48416b8890">
     <br>
-    <em>Screenshot 1: Overview of all Scrum Teams</em>
-  </div>
-  <br>
-  <div>
-    <img width="235" alt="image" src="https://github.com/Luca-Wiehe/scrum_app/assets/85710000/ff1d5ca5-2386-4fc4-84ff-d4963bf12c3c">
-    <br>
-    <em>Screenshot 2: Scheduling a Scrum Meeting</em>
+    <em>Screenshot 1: Meeting Overview</em>
   </div>
   <br>
   <div>
     <img width="235" alt="image" src="https://github.com/Luca-Wiehe/scrum_app/assets/85710000/f5eeae2c-05a9-4f12-98c6-9f0fc5db7dd1">
     <br>
-    <em>Screenshot 3: Creating a new Scrum Team</em>
+    <em>Screenshot 2: Schedule Meetings</em>
+  </div>
+  <br>
+  <div>
+    <img width="235" alt="image" src="https://github.com/Luca-Wiehe/scrum_app/assets/85710000/ff1d5ca5-2386-4fc4-84ff-d4963bf12c3c">
+    <br>
+    <em>Screenshot 3: Meeting Details</em>
+  </div>
+  <br>
+  <div>
+    <img width="235" alt="image" src="https://github.com/Luca-Wiehe/scrum_app/assets/85710000/ee7224ab-e4b1-40dd-a3a9-8e0b7c8f9017">
+    <br>
+    <em>Screenshot 4: Scrum Meeting</em>
   </div>
 </div>
 
